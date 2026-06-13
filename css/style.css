@@ -10,7 +10,7 @@
   --white:   #FFFFFF;
   --sumi:    #1C1A17;   /* メイン: 墨 */
   --sumi-soft:#454039;
-  --mute:    #8E8779;
+  --mute:    #6F685C;
   --shu:     #C73E2E;   /* アクセント: 朱 */
   --shu-deep:#A53023;
   --kiji:    #E5D3B3;   /* 白木 */
@@ -160,7 +160,7 @@ strong{
 .fv-catch{
   font-family:var(--fude); font-weight:400;
   font-size:clamp(38px, 6vw, 64px);
-  line-height:1.5; letter-spacing:.08em;
+  line-height:1.35; letter-spacing:.06em;
 }
 .fv-sub{ margin-top:24px; font-size:14.5px; color:var(--sumi-soft); line-height:2.1; }
 .fv-badges{ list-style:none; display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
@@ -278,8 +278,10 @@ strong{
   padding:26px 22px;
   position:relative;
 }
+/* 4枚を市松状にずらし、均一カードの反復感を破る */
+.flow-card:nth-child(even){ transform:translateY(14px); }
 .flow-num{
-  font-family:var(--fude); font-size:34px; color:var(--shu);
+  font-family:var(--fude); font-size:clamp(40px, 5vw, 56px); color:var(--shu);
   display:block; margin-bottom:12px; line-height:1;
 }
 .flow-card h3{
@@ -376,8 +378,8 @@ strong{
   border-left:4px solid var(--shu);
   padding:28px 26px 22px;
 }
-.voice-card blockquote p{ font-size:13.5px; line-height:2; color:var(--sumi-soft); }
-.voice-card blockquote p[lang="en"]{ font-family:var(--en); font-size:15px; line-height:1.9; }
+.voice-card blockquote p{ font-size:14px; line-height:2; color:var(--sumi-soft); }
+.voice-card blockquote p[lang="en"]{ font-family:var(--en); font-size:14px; line-height:2; }
 .voice-card figcaption{
   margin-top:14px; padding-top:12px; border-top:1px dashed var(--line);
   font-size:12px; font-weight:700; letter-spacing:.12em; color:var(--shu);
@@ -486,7 +488,7 @@ strong{
 
 /* ============ フッター ============ */
 .footer{
-  background:var(--sumi); color:#A39B8B;
+  background:var(--sumi); color:#B8AF9D;
   text-align:center; padding:32px 24px 96px;
 }
 .footer-logo{
@@ -517,9 +519,16 @@ html[lang="en"] .plan-card h3,
 html[lang="en"] .midcta-copy,
 html[lang="en"] .form-done-title{
   font-family:var(--en);
-  letter-spacing:.04em;
+  letter-spacing:.01em;
 }
-html[lang="en"] .fv-catch{ line-height:1.3; }
+/* Marcellusは字面が広いので、英文見出しは字間を詰めて密度を出す */
+html[lang="en"] .fv-catch{
+  line-height:1.2; letter-spacing:0;
+  font-size:clamp(42px, 6.4vw, 70px);
+}
+html[lang="en"] .sec-title,
+html[lang="en"] .reason h3,
+html[lang="en"] .plan-card h3{ letter-spacing:.01em; }
 html[lang="en"] body, html[lang="en"] .fv-sub{ letter-spacing:.01em; }
 
 /* ============ アクセシビリティ ============ */
@@ -586,6 +595,7 @@ html[lang="en"] body, html[lang="en"] .fv-sub{ letter-spacing:.01em; }
   .fv-vertical{ right:0; font-size:19px; }
   .sushi-stage{ width:min(250px, 78%); }
   .flow-grid{ grid-template-columns:1fr; max-width:420px; margin:0 auto; }
+  .flow-card:nth-child(even){ transform:none; }
   .reason{ grid-template-columns:64px 1fr; gap:16px; }
   .reason-num{ width:56px; height:56px; font-size:26px; }
   .form-grid{ grid-template-columns:1fr; gap:0; }
