@@ -61,9 +61,6 @@
     'reasons.r3t': 'Take home skills, a certificate, and photos',
     'reasons.r3d': 'At the end you receive a <strong>certificate with your name on it</strong>. Our staff photographs you in your happi coat and sends the pictures the same day. Social-media worthy, we promise.',
 
-    'band.lead': 'The chef’s hands,<br>right before you.',
-    'band.sub': 'Across the hinoki counter, watch real nigiri being made up close — then taste the piece you shaped yourself. Ninety minutes you won’t forget.',
-
     'midcta.copy': 'Save just 90 minutes of your trip for this.',
     'midcta.cta': 'Check Availability',
 
